@@ -17,3 +17,19 @@
     # free to override `additional_dependencies` in your own hook config
     # file.
     - ansible-core>=2.13.3
+
+- id: ansible-lint-fix
+  name: Ansible-lint auto-fix
+  description: This hook runs ansible-lint with --fix
+  entry: python3 -m ansiblelint -v --force-color --fix
+  language: python
+  # do not pass files to ansible-lint, see:
+  # https://github.com/ansible/ansible-lint/issues/611
+  pass_filenames: false
+  always_run: true
+  additional_dependencies:
+    # https://github.com/pre-commit/pre-commit/issues/1526
+    # If you want to use specific version of ansible-core or ansible, feel
+    # free to override `additional_dependencies` in your own hook config
+    # file.
+    - ansible-core>=2.13.3
