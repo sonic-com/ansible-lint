@@ -25,7 +25,7 @@
   language: python
   # do not pass files to ansible-lint, see:
   # https://github.com/ansible/ansible-lint/issues/611
-  pass_filenames: false
+  pass_filenames: true
   always_run: true
   additional_dependencies:
     # https://github.com/pre-commit/pre-commit/issues/1526
